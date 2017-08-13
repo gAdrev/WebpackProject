@@ -36,6 +36,13 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "src/index.html"
+    }),
+    new webpack.DefinePlugin({
+      // Less error checking in React when the variable expands
+      // to the value "production".
+      // React checks for this var in window, hence the need
+      // to use the plugin to define it in there
+      "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV)
     })
   ]
 };
