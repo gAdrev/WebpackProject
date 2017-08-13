@@ -16,7 +16,7 @@ if (isDevelopment) {
 
   // react-router browser history module compatibility stuff
   app.get("*", (req, res) => {
-    res.sendFile(pat.join(__dirname, "dist/index.html"));
+    res.sendFile(path.join(__dirname, "dist/index.html"));
   })
 }
 
